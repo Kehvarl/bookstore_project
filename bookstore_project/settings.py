@@ -160,6 +160,8 @@ AUTHENTICATION_BACKENDS = (
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+
 ACCOUNT_SESSION_REMEMBER = True
 
 ACCOUNT_USERNAME_REQUIRED = False
