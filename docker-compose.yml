@@ -8,6 +8,11 @@ services:
       - SECRET_KEY=vka%qs_!(ix*or87wri(a0g0c@&-q7@-#39a0qa#26-q9*97x_
       - DEBUG=1
       - DEFAULT_FROM_EMAIL=kehvarl@kehvarl.com
+      - EMAIL_HOST=mail.test.com
+      - EMAIL_HOST_USER=test
+      - EMAIL_HOST_PASSWORD=test_password
+      - EMAIL_PORT=25
+      - EMAIL_USE_TLS=False
     volumes:
       - .:/code
     ports:
