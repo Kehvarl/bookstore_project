@@ -26,8 +26,8 @@ class BookDetailView(LoginRequiredMixin,
 
 class SearchResultsListView(ListView):
     """
-    View for search results
-    with filtering based on title
+    Load Search Results and Display Them
+    Request -> GET -> q:   terms to search in title and author.
     """
     model = Book
     context_object_name = 'book_list'
@@ -35,6 +35,8 @@ class SearchResultsListView(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('q')
+        if query is None:
+            return Book.objects.all()
         return Book.objects.filter(
             Q(title__icontains=query) | Q(author__icontains=query)
         )
