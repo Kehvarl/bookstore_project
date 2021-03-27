@@ -22,7 +22,11 @@ class BookDetailView(LoginRequiredMixin,
     login_url = 'account_login'
     permission_required = 'books.special_status'
 
+
 class SearchResultsListView(ListView):
+    """
+    View for search results
+    """
     model = Book
     context_object_name = 'book_list'
-    template_name = 'book/search_results.html'
+    template_name = 'books/search_results.html'
