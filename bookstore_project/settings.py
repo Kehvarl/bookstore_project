@@ -16,6 +16,7 @@ ENVIRONMENT = os.environ.get('ENVIRONMENT', default='development')
 
 if ENVIRONMENT == 'production':
     SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = 'DENY'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
