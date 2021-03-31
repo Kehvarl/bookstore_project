@@ -20,7 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     # Django Admin
-    path('admin/', admin.site.urls),
+    path('librarian/', admin.site.urls),
 
     # User Management / Auth
     path('accounts/', include('allauth.urls')),
@@ -29,7 +29,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('books/', include('books.urls')),
     path('orders/', include('orders.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 
 if settings.DEBUG:
@@ -37,3 +37,4 @@ if settings.DEBUG:
     urlpatterns = [
         path('__debub__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+    + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
